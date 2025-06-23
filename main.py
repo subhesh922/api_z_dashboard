@@ -1,6 +1,9 @@
 from fastapi import FastAPI, Depends, Body
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import HTTPBearer
+from fastapi.openapi.utils import get_openapi
+from fastapi import Depends, FastAPI, HTTPException, status, Security
 from pydantic import ValidationError
 from models import MarkdownAnalysisRequest, SingleFileSummaryResponse, MultiFileAnalysisResponse
 from wst__markdown_processor import Wst_MarkdownExtractor,Wst_MarkdownHarmonizer
@@ -21,6 +24,9 @@ import json
 
 app = FastAPI()
 
+bearer_scheme = HTTPBearer()
+
+
 # Allow frontend calls (if re-enabled in future)
 app.add_middleware(
     CORSMiddleware,
@@ -33,10 +39,25 @@ app.add_middleware(
 
 # @app.post("/analyze_markdown")
 # async def analyze_markdown(request: MarkdownAnalysisRequest,auth=Body(verify_auth_token)):
+# @app.post("/analyze_markdown")
+# async def analyze_markdown(
+#     request: MarkdownAnalysisRequest):
+#     verify_auth_token(request.auth)  # Added explicit verification
+# @app.post("/analyze_markdown")
+# async def analyze_markdown(
+#     request: MarkdownAnalysisRequest,
+#     _=Depends(verify_auth_token)
+#     ):
 @app.post("/analyze_markdown")
 async def analyze_markdown(
-    request: MarkdownAnalysisRequest):
-    verify_auth_token(request.auth)  # Added explicit verification
+    request: MarkdownAnalysisRequest,
+    token: str = Security(bearer_scheme)
+):
+    
+    # ✅ Step 0A: Check token
+    if token.credentials != "asdfghjkl123456788":
+        raise HTTPException(status_code=401, detail="Invalid token")
+    
     try:
         # Step 0: Sanitize payload
         sanitized_input = sanitize_incoming_payload(request.dict())
