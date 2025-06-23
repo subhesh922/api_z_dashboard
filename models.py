@@ -12,7 +12,7 @@ class MarkdownAnalysisRequest(BaseModel):
     """
     markdown_text: str
     product: Literal["WST", "TM"]
-    auth: str  # Add this field
+    #auth: str  # Add this field
 
 
 class SingleFileSummaryResponse(BaseModel):
