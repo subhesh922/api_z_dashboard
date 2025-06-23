@@ -13,18 +13,59 @@ load_dotenv()
 
 
 
+# def sanitize_incoming_payload(payload: dict) -> dict:
+#     """
+#     Ensures the incoming payload is well-formed:
+#     - Escapes control characters in markdown_text
+#     - Validates required fields including Authorization
+#     - Converts malformed inputs to usable format
+#     """
+#     if not isinstance(payload, dict):
+#         raise HTTPException(status_code=400, detail="Payload must be a JSON object.")
+
+#     # Updated to include Authorization
+#     required_keys = {"markdown_text", "product", "auth"}
+#     if not required_keys.issubset(payload.keys()):
+#         raise HTTPException(status_code=400, detail=f"Missing required keys: {required_keys - payload.keys()}")
+
+#     # Fix markdown_text issues
+#     raw_markdown = payload.get("markdown_text")
+#     if not isinstance(raw_markdown, str):
+#         raise HTTPException(status_code=400, detail="`markdown_text` must be a string.")
+
+#     # Escape problematic control characters
+#     clean_markdown = raw_markdown.replace('\\', '\\\\')  # escape backslashes
+#     clean_markdown = clean_markdown.replace('\t', '    ')  # tabs to spaces
+#     clean_markdown = clean_markdown.replace('\r', '')  # remove carriage returns
+#     clean_markdown = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]', '', clean_markdown)
+#     clean_markdown = re.sub(r'[\x00-\x1F\x7F]', '', clean_markdown)  # remove other control characters
+
+#     # Validate product
+#     product = payload.get("product", "").strip().upper()
+#     if product not in {"WST", "TM"}:
+#         raise HTTPException(status_code=400, detail="`product` must be 'WST' or 'TM'")
+
+#     # Get and verify Authorization token exists (actual verification happens later)
+#     auth_token = payload.get("auth")
+#     if not isinstance(auth_token, str):
+#         raise HTTPException(status_code=400, detail="`auth` must be a string")
+
+#     return {
+#         "markdown_text": clean_markdown,
+#         "product": product,
+#         "auth": auth_token  # Include in return dict
+#     }
 def sanitize_incoming_payload(payload: dict) -> dict:
     """
     Ensures the incoming payload is well-formed:
     - Escapes control characters in markdown_text
-    - Validates required fields including Authorization
+    - Validates required fields
     - Converts malformed inputs to usable format
     """
     if not isinstance(payload, dict):
         raise HTTPException(status_code=400, detail="Payload must be a JSON object.")
 
-    # Updated to include Authorization
-    required_keys = {"markdown_text", "product", "auth"}
+    required_keys = {"markdown_text", "product"}
     if not required_keys.issubset(payload.keys()):
         raise HTTPException(status_code=400, detail=f"Missing required keys: {required_keys - payload.keys()}")
 
@@ -45,16 +86,11 @@ def sanitize_incoming_payload(payload: dict) -> dict:
     if product not in {"WST", "TM"}:
         raise HTTPException(status_code=400, detail="`product` must be 'WST' or 'TM'")
 
-    # Get and verify Authorization token exists (actual verification happens later)
-    auth_token = payload.get("auth")
-    if not isinstance(auth_token, str):
-        raise HTTPException(status_code=400, detail="`auth` must be a string")
-
     return {
         "markdown_text": clean_markdown,
-        "product": product,
-        "auth": auth_token  # Include in return dict
+        "product": product
     }
+
 
 def extract_versions_wst(text):
     # Matches version numbers like 45.1.15.0 or 12.34.56.78
@@ -199,11 +235,23 @@ Your evaluation:"""
             "text": "Could not parse evaluation"
         }
     
-def verify_auth_token(auth_token: str = Body(..., alias="auth")):
-    """
-    Verify if the provided auth token matches the expected token.
-    Raise 401 Unauthorized if it doesn't match.
-    """
-    DEFAULT_AUTH_TOKEN="asdfghjkl123456788"
-    if auth_token != DEFAULT_AUTH_TOKEN:
-        raise HTTPException(status_code=401, detail="Invalid or missing auth token.")
+# def verify_auth_token(auth_token: str = Body(..., alias="auth")):
+#     """
+#     Verify if the provided auth token matches the expected token.
+#     Raise 401 Unauthorized if it doesn't match.
+#     """
+#     DEFAULT_AUTH_TOKEN="asdfghjkl123456788"
+#     if auth_token != DEFAULT_AUTH_TOKEN:
+#         raise HTTPException(status_code=401, detail="Invalid or missing auth token.")
+
+
+from fastapi import Header
+
+def verify_auth_token(authorization: str = Header(...)):
+    expected = "asdfghjkl123456788"
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Invalid or missing Authorization header.")
+    
+    token = authorization.removeprefix("Bearer ").strip()
+    if token != expected:
+        raise HTTPException(status_code=401, detail="Invalid token.")
