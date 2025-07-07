@@ -1,0 +1,507 @@
+{
+  "metrics": {
+    "release_scope": {
+      "Target Customers": {
+        "45.1.15.0": "H&M",
+        "45.1.16.0": "BP",
+        "45.1.17.0": "BHEL"
+      },
+      "Release Epics": {
+        "45.1.15.0": {
+          "Total": 11,
+          "Open": 0
+        },
+        "45.1.16.0": {
+          "Total": 11,
+          "Open": 0
+        },
+        "45.1.17.0": {
+          "Total": 19,
+          "Open": 0
+        }
+      },
+      "Release PIRs": {
+        "45.1.15.0": {
+          "Total": 0,
+          "Open": 0
+        },
+        "45.1.16.0": {
+          "Total": 93,
+          "Open": 0
+        },
+        "45.1.17.0": {
+          "Total": 108,
+          "Open": 0
+        }
+      },
+      "SFDC Defects Fixed": {
+        "45.1.15.0": {
+          "ATLs Fixed": 83,
+          "BTLs Fixed": 26
+        },
+        "45.1.16.0": {
+          "ATLs Fixed": 88,
+          "BTLs Fixed": 41
+        },
+        "45.1.17.0": {
+          "ATLs Fixed": 100,
+          "BTLs Fixed": 26
+        }
+      }
+    },
+    "critical_metrics": {
+      "Delivery Against Requirements": {
+        "45.1.15.0": {
+          "Value": 100,
+          "Status": "NO RISK"
+        },
+        "45.1.16.0": {
+          "Value": 100,
+          "Status": "NO RISK"
+        },
+        "45.1.17.0": {
+          "Value": 100,
+          "Status": "NO RISK"
+        }
+      },
+      "System / Solution Test Metrics": {
+        "45.1.15.0": {
+          "Total": 287,
+          "Open": 1,
+          "Status": null
+        },
+        "45.1.16.0": {
+          "Total": 1017,
+          "Open": 2,
+          "Status": null
+        },
+        "45.1.17.0": {
+          "Total": 1250,
+          "Open": 8,
+          "Status": null
+        }
+      },
+      "System / Solution Test Coverage": {
+        "45.1.15.0": {
+          "Value": 90,
+          "Status": "MEDIUM RISK"
+        },
+        "45.1.16.0": {
+          "Value": 96,
+          "Status": "MEDIUM RISK"
+        },
+        "45.1.17.0": {
+          "Value": 90,
+          "Status": "MEDIUM RISK"
+        }
+      },
+      "System / Solution Test Pass Rate": {
+        "45.1.15.0": {
+          "Value": 93,
+          "Status": "MEDIUM RISK"
+        },
+        "45.1.16.0": {
+          "Value": 92,
+          "Status": "MEDIUM RISK"
+        },
+        "45.1.17.0": {
+          "Value": 93,
+          "Status": "MEDIUM RISK"
+        }
+      },
+      "Security Test Metrics": {
+        "45.1.15.0": {
+          "Total": 0,
+          "Open": 0,
+          "Status": null
+        },
+        "45.1.16.0": {
+          "Total": 0,
+          "Open": 0,
+          "Status": null
+        },
+        "45.1.17.0": {
+          "Total": 20,
+          "Open": 0,
+          "Status": null
+        }
+      },
+      "Performance / Load Test Metrics": {
+        "45.1.15.0": {
+          "Total": 0,
+          "Open": 0,
+          "Status": null
+        },
+        "45.1.16.0": {
+          "Total": 0,
+          "Open": 0,
+          "Status": null
+        },
+        "45.1.17.0": {
+          "Total": 12,
+          "Open": 25,
+          "Status": null
+        }
+      }
+    },
+    "health_trends": {
+      "Unit Test Coverage": {
+        "45.1.15.0": {
+          "Criteria": ">= 80%",
+          "Previous": "20%",
+          "Current": "25%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        },
+        "45.1.16.0": {
+          "Criteria": ">= 80%",
+          "Previous": "25%",
+          "Current": "40%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        },
+        "45.1.17.0": {
+          "Criteria": ">= 80%",
+          "Previous": "20%",
+          "Current": "25%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        }
+      },
+      "Automation Test Coverage": {
+        "45.1.15.0": {
+          "Criteria": ">= 85%",
+          "Previous": "50%",
+          "Current": "50%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        },
+        "45.1.16.0": {
+          "Criteria": ">= 85%",
+          "Previous": "50%",
+          "Current": "60%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        },
+        "45.1.17.0": {
+          "Criteria": ">= 85%",
+          "Previous": "50%",
+          "Current": "50%",
+          "Status": "WIP",
+          "Summary": "This is an ongoing effort with ETA of Q3 2026"
+        }
+      }
+    }
+  },
+  "report": {
+    "Overview": "The versions being analyzed are 45.1.15.0, 45.1.16.0, and 45.1.17.0. Overall, the release quality shows consistent improvements in certain areas such as Release PIRs and System/Solution Test Metrics, while some metrics like SFDC Defects Fixed (BTLs) and Unit Test Coverage require further attention.",
+    "Metrics Summary": {
+      "release_scope_metrics": {
+        "Release Epics": [
+          {
+            "version": "45.1.15.0",
+            "total": 11,
+            "open": 0,
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 11,
+            "open": 0,
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 19,
+            "open": 0,
+            "trend": "↑"
+          }
+        ],
+        "Release PIRs": [
+          {
+            "version": "45.1.15.0",
+            "total": 0,
+            "open": 0,
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 93,
+            "open": 0,
+            "trend": "↑"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 108,
+            "open": 0,
+            "trend": "↑"
+          }
+        ],
+        "SFDC DEFECTS FIXED (ATLs)": [
+          {
+            "version": "45.1.15.0",
+            "value": 83,
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "value": 88,
+            "trend": "↑"
+          },
+          {
+            "version": "45.1.17.0",
+            "value": 100,
+            "trend": "↑"
+          }
+        ],
+        "SFDC DEFECTS FIXED (BTLs)": [
+          {
+            "version": "45.1.15.0",
+            "value": 26,
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "value": 41,
+            "trend": "↑"
+          },
+          {
+            "version": "45.1.17.0",
+            "value": 26,
+            "trend": "↓"
+          }
+        ]
+      },
+      "critical_metrics": {
+        "System / Solution Test Metrics (ATL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 287,
+            "open": 1,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 1017,
+            "open": 2,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 1250,
+            "open": 8,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          }
+        ],
+        "System / Solution Test Metrics (BTL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 110,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 110,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 110,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          }
+        ],
+        "Security Test Metrics (ATL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 20,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          }
+        ],
+        "Security Test Metrics (BTL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 20,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          }
+        ],
+        "Performance / Load Test Metrics (ATL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 12,
+            "open": 25,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          }
+        ],
+        "Performance / Load Test Metrics (BTL)": [
+          {
+            "version": "45.1.15.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.16.0",
+            "total": 0,
+            "open": 0,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↔"
+          },
+          {
+            "version": "45.1.17.0",
+            "total": 12,
+            "open": 25,
+            "risk_status": "-",
+            "comments": "-",
+            "trend": "↑"
+          }
+        ]
+      },
+      "health_trends": [
+        {
+          "version": "45.1.15.0",
+          "metric": "Unit Test Coverage",
+          "criteria": ">= 80%",
+          "previous": "20%",
+          "current": "25%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↔"
+        },
+        {
+          "version": "45.1.16.0",
+          "metric": "Unit Test Coverage",
+          "criteria": ">= 80%",
+          "previous": "25%",
+          "current": "40%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↑"
+        },
+        {
+          "version": "45.1.17.0",
+          "metric": "Unit Test Coverage",
+          "criteria": ">= 80%",
+          "previous": "40%",
+          "current": "25%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↓"
+        },
+        {
+          "version": "45.1.15.0",
+          "metric": "Automation Test Coverage",
+          "criteria": ">= 85%",
+          "previous": "50%",
+          "current": "50%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↔"
+        },
+        {
+          "version": "45.1.16.0",
+          "metric": "Automation Test Coverage",
+          "criteria": ">= 85%",
+          "previous": "50%",
+          "current": "60%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↑"
+        },
+        {
+          "version": "45.1.17.0",
+          "metric": "Automation Test Coverage",
+          "criteria": ">= 85%",
+          "previous": "60%",
+          "current": "50%",
+          "status": "WIP",
+          "summary": "This is an ongoing effort with ETA of Q3 2026",
+          "trend": "↓"
+        }
+      ]
+    },
+    "Key findings": "The release shows strong improvements in Release PIRs and System/Solution Test Metrics. However, Unit Test Coverage and SFDC Defects Fixed (BTLs) have shown a decline in the latest version. Performance/Load Test Metrics (ATL) also indicate a significant increase in open issues.",
+    "Recommendations": "Focus on improving Unit Test Coverage and addressing the decline in SFDC Defects Fixed (BTLs). Additionally, prioritize resolving open issues in Performance/Load Test Metrics (ATL) to ensure stability."
+  },
+  "evaluation": {
+    "data_accuracy": 45,
+    "analysis_depth": 25,
+    "clarity": 18,
+    "total": 88,
+    "text": "The generated report demonstrates a high level of data accuracy, with most metrics and trends correctly reflecting the source text. The analysis provides meaningful insights, such as identifying trends and areas for improvement, though it could delve deeper into the implications of certain metrics. The report is clear and professionally presented, with well-structured sections and concise summaries, though minor formatting inconsistencies slightly detract from its overall clarity."
+  },
+  "brief_summary": "```markdown\n- All release epics for versions 45.1.15.0, 45.1.16.0, and 45.1.17.0 are closed, with total counts of 11, 11, and 19 respectively.\n- System/Solution test metrics show 1, 2, and 8 open tests for versions 45.1.15.0, 45.1.16.0, and 45.1.17.0, with medium risk coverage and pass rates ranging from 90-96%.\n- Security test metrics are fully closed for versions 45.1.15.0 and 45.1.16.0, while version 45.1.17.0 has 20 total tests with no open issues.\n- Unit test coverage remains below the 80% criteria across all versions, with incremental progress noted (25% for 45.1.15.0 and 45.1.17.0, 40% for 45.1.16.0).\n- Automation test coverage is progressing towards the 85% criteria, with current values of 50% for 45.1.15.0 and 45.1.17.0, and 60% for 45.1.16.0.\n```"
+}
